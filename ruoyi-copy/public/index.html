@@ -1,0 +1,118 @@
+<!--
+ * @Author: huqiwei 463564148@qq.com
+ * @Date: 2024-07-31 16:52:01
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-07-31 17:58:46
+ * @FilePath: \ruoyi-copy\ruoyi-copy\public\index.html
+ * @Description: index.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="render" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+
+    <style>
+      html,
+      body,
+      #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #FFF;
+        animation: spin 2s linear infinite;
+        z-index: 1;
+      }
+
+      #loader:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #FFF;
+        animation: spin 3s linear infinite;
+      }
+
+      #loader:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #FFF;
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #7171C6;
+        transform: translateX(0);
+      }
+
+      #loader-wrapper .section-left {
+        left: 0;
+      }
+
+      #loader-wrapper .section-right {
+        right: 0;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <div class="load_titile">正在加载系统资源，请耐心等待</div>
+      </div>
+    </div>
+  </body>
+</html>
